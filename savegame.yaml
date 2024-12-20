@@ -1,0 +1,13 @@
+players:
+  - name: Matteo
+    life: 100
+    damage: 10
+    defense: 15
+  - name: Federico
+    life: 110
+    damage: 7.5
+    defense: 17.5
+  - name: Mario
+    life: 90
+    damage: 11.25
+    defense: 12.5

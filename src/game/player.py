@@ -1,18 +1,21 @@
 from random import randint
 
+
 class Player:
     name: str
-    life: int = 100
-    damage: int = 10
+    life: int
+    damage: int
     defense: int
 
     @property
     def is_alive(self) -> bool:
         return self.life > 0
 
-    def __init__(self, name: str):
+    def __init__(self, name: str, life = 100, damage = 10, defense = None):
         self.name = name
-        self.defense = randint(0, 25)
+        self.life = life
+        self.damage = damage
+        self.defense = randint(0, 25) if defense is None else defense
 
     def take_damage(self, damage: int) -> int:
         damage -= (damage * self.defense) / 100

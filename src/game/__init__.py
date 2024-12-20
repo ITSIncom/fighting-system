@@ -1,4 +1,5 @@
 from random import randint
+from typing import Any
 
 from .player import Player
 
@@ -14,14 +15,14 @@ class Game:
 
     players: list[Player]
 
-    def __init__(self, player_names: list[str]):
-        total_players = len(player_names)
+    def __init__(self, loaded_players: list[dict[str, Any]]):
+        total_players = len(loaded_players)
 
         self.current_index = randint(0 , total_players - 1)
         self.players = []
 
-        for name in player_names:
-            player = Player(name)
+        for loaded_player in loaded_players:
+            player = Player(**loaded_player)
 
             self.players.append(player)
 

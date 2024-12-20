@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from game import Game
+from game.saves import load_saves
 
 #
 # - Attaccare solo gli altri
@@ -44,8 +45,7 @@ def handle_player_turn(game: Game) -> None:
 
 
 def main() -> None:
-    player_names = get_players()
-    game = Game(player_names)
+    game = Game(load_saves())
 
     while game.is_running:
         handle_player_turn(game)
